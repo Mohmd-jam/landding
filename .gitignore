@@ -1,0 +1,8 @@
+/app/config.local.php
+/storage/*.sqlite
+/storage/sessions/*
+!/storage/sessions/.gitkeep
+/public/uploads/*
+!/public/uploads/.gitkeep
+/node_modules
+.DS_Store
