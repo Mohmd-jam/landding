@@ -1,0 +1,40 @@
+{
+  "name": "portfolio-cms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bilingual (fa/en) personal portfolio + real CMS — React front end, PHP 8.3 + MySQL back end.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node tools/server.mjs",
+    "serve": "node tools/server.mjs",
+    "build": "vite build",
+    "build:watch": "vite build --watch",
+    "preview": "npm run build && node tools/server.mjs",
+    "db:install": "node tools/cli.mjs install",
+    "db:migrate": "node tools/cli.mjs migrate",
+    "db:fresh": "node tools/cli.mjs migrate --fresh",
+    "db:seed": "node tools/cli.mjs seed --fresh",
+    "db:stats": "node tools/cli.mjs stats",
+    "db:dump": "node tools/cli.mjs dump",
+    "user:create": "node tools/cli.mjs user:create",
+    "lint:php": "node tools/cli.mjs lint",
+    "test": "node tools/test.mjs",
+    "test:api": "node tools/test.mjs api",
+    "test:smoke": "node tools/test.mjs smoke",
+    "check": "npm run lint:php && npm run test"
+  },
+  "dependencies": {
+    "@php-wasm/node": "3.1.54",
+    "@php-wasm/universal": "3.1.54",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.30.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.7.0",
+    "vite": "5.4.21"
+  }
+}

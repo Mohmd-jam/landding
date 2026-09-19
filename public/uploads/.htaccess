@@ -1,0 +1,18 @@
+# Media library: serve files, never execute them.
+php_flag engine off
+AddType text/plain .php .php3 .php4 .php5 .php7 .phtml .phar .pl .py .cgi .asp .aspx .jsp .sh .exe
+RemoveHandler .php .phtml .phar .pl .py .cgi .asp .aspx .jsp .sh
+Options -ExecCGI -Indexes
+
+<FilesMatch "\.(php|php[0-9]|phtml|phar|pl|py|cgi|asp|aspx|jsp|sh|exe|so|dll|htaccess)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
