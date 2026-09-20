@@ -51,9 +51,20 @@ pip install PySide6 Pillow
 
 ## 📦 ساخت فایل اجرایی (EXE)
 
+**روش ۱ — روی سیستم ویندوزی خودتان (پیشنهاد می‌شود):**
+
 ```powershell
 .\Build-Windows.ps1        # خروجی: dist\JamTools.exe
 ```
+
+فقط Python 3.10 به بالا لازم است؛ اسکریپت خودش محیط مجازی می‌سازد، وابستگی‌ها را نصب می‌کند، تست می‌گیرد و EXE تک‌فایل می‌سازد.
+
+**روش ۲ — بیلد ابری با GitHub Actions (بدون نیاز به ویندوز):**
+
+۱. فایل `jamtools/ci/BUILD-WINDOWS-WORKFLOW.yml` را در ریپو به مسیر `.github/workflows/build-windows.yml` کپی و پوش کنید.
+۲. در گیت‌هاب: تب **Actions** ← گزینه **Build Windows EXE** ← دکمه **Run workflow**.
+۳. بعد از چند دقیقه، فایل `JamTools.exe` را از بخش **Artifacts** همان اجرا دانلود کنید.
+۴. (اختیاری) با پوش تگ مثل `jamtools-v1.0.0`، یک **Release** خودکار هم با فایل EXE ساخته می‌شود.
 
 ## 🧪 تست‌ها
 
@@ -118,9 +129,13 @@ Install from [UB-Mannheim/tesseract](https://github.com/UB-Mannheim/tesseract/wi
 
 ## Build EXE
 
+**On your Windows PC:**
+
 ```powershell
 .\Build-Windows.ps1     # → dist\JamTools.exe
 ```
+
+**Or in the cloud (no Windows needed):** copy `jamtools/ci/BUILD-WINDOWS-WORKFLOW.yml` to `.github/workflows/build-windows.yml`, push, then run the **Build Windows EXE** workflow from the Actions tab and download `JamTools.exe` from its Artifacts. Pushing a tag like `jamtools-v1.0.0` also creates a GitHub Release automatically.
 
 ## Tests
 
