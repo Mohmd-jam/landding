@@ -6,3 +6,13 @@
 !/public/uploads/.gitkeep
 /node_modules
 .DS_Store
+
+# JamTools (python desktop app)
+/jamtools/.venv/
+/jamtools/__pycache__/
+/jamtools/**/__pycache__/
+/jamtools/*.spec
+/jamtools/build/
+/jamtools/dist/
+/jamtools/*.egg-info/
+/jamtools/.pytest_cache/

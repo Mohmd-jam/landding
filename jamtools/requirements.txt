@@ -1,0 +1,6 @@
+# Core — always needed
+PySide6>=6.7
+Pillow>=10.0
+
+# Full feature set (PDF / OCR / Office / audio metadata)
+-r requirements-full.txt
